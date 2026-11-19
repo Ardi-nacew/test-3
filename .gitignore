@@ -1,0 +1,4 @@
+# Written by Lindi when it set up git here.
+# Environment files hold secrets: never commit them.
+.env*
+.DS_Store
