@@ -10,7 +10,7 @@ export default function AppPage() {
   return (
     <>
       <SiteHeader cta={false} />
-      <main className="flex-1">
+      <main>
         <TodoBoard />
       </main>
     </>

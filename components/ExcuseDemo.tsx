@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { EXCUSES, randomExcuse } from "@/lib/excuses";
 
@@ -26,9 +27,10 @@ export function ExcuseDemo() {
             setExcuse((prev) => randomExcuse(prev));
             setSpins((s) => s + 1);
           }}
-          className="rounded-full border-2 border-line bg-lemon px-5 py-2.5 text-sm font-bold shadow-brutal-sm transition hover:-translate-y-0.5 hover:shadow-brutal active:translate-y-0 active:shadow-none"
+          className="inline-flex items-center justify-center gap-1.5 rounded-full border-2 border-line bg-lemon px-5 py-2.5 text-sm font-bold shadow-brutal-sm transition hover:-translate-y-0.5 hover:shadow-brutal active:translate-y-0 active:shadow-none"
         >
-          🎲 Give me another
+          <Image src="/icons/dice.svg" alt="" width={14} height={14} />
+          Give me another
         </button>
         <span className="text-sm text-muted">
           {spins === 0 ? "Try it. You know you want to." : `${spins} excuses wasted`}
