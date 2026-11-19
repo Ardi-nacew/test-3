@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { guiltLevel } from "@/lib/excuses";
 import { todoActions, useTodos, type Todo } from "@/lib/todoStore";
@@ -92,7 +93,11 @@ export function TodoBoard() {
         <div className="rounded-2xl border-2 border-line bg-surface p-6 shadow-brutal">
           <p className="text-xs font-bold tracking-widest text-muted uppercase">Guilt meter</p>
           <div className="mt-3 flex items-center gap-3">
-            <span className="text-4xl">{guilt.emoji}</span>
+            {guilt.emoji === "🦥" ? (
+              <Image src="/icons/sloth.svg" alt="" width={36} height={36} />
+            ) : (
+              <span className="text-4xl">{guilt.emoji}</span>
+            )}
             <div>
               <p className="font-display text-xl leading-tight font-bold">{guilt.label}</p>
               <p className="text-sm text-muted">
@@ -117,9 +122,10 @@ export function TodoBoard() {
             type="button"
             disabled={open.length === 0}
             onClick={() => todoActions.procrastinateAll()}
-            className="mt-4 w-full rounded-xl border-2 border-line bg-surface px-4 py-3 font-bold shadow-brutal-sm transition hover:-translate-y-0.5 hover:shadow-brutal disabled:opacity-50 disabled:hover:translate-y-0"
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border-2 border-line bg-surface px-2 py-3 font-bold shadow-brutal-sm transition hover:-translate-y-0.5 hover:shadow-brutal disabled:opacity-50 disabled:hover:translate-y-0"
           >
-            🛋️ Procrastinate everything
+            <Image src="/icons/couch.svg" alt="" width={16} height={16} />
+            Procrastinate everything
           </button>
         </div>
       </aside>
@@ -153,9 +159,10 @@ function TodoRow({ todo }: { todo: Todo }) {
           <button
             type="button"
             onClick={() => todoActions.procrastinate(todo.id)}
-            className="shrink-0 rounded-full border-2 border-line bg-lemon px-3 py-1.5 text-xs font-bold transition hover:-translate-y-0.5 hover:shadow-brutal-sm"
+            className="inline-flex shrink-0 items-center justify-center gap-1 rounded-full border-2 border-line bg-lemon px-3 py-1.5 text-xs font-bold transition hover:-translate-y-0.5 hover:shadow-brutal-sm"
           >
-            ⏰ Procrastinate
+            <Image src="/icons/alarm-clock.svg" alt="" width={12} height={12} />
+            Procrastinate
           </button>
         )}
         <button

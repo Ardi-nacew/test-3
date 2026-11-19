@@ -1,22 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ExcuseDemo } from "@/components/ExcuseDemo";
 
 const FEATURES = [
   {
-    emoji: "⏰",
+    icon: "/icons/alarm-clock.svg",
     title: "The Procrastinate button",
     body: "Every task gets one. Tap it and the task politely moves to tomorrow. Tap it again. We won’t judge. Much.",
     color: "bg-lemon",
   },
   {
-    emoji: "🎲",
+    icon: "/icons/dice.svg",
     title: "Built-in excuses",
     body: "Each snooze comes with a fresh, hand-crafted excuse, so you always have something to tell your boss.",
     color: "bg-mint",
   },
   {
-    emoji: "📈",
+    icon: "/icons/chart.svg",
     title: "Guilt meter",
     body: "Watch your rank climb from “Suspiciously productive” all the way to “Living legend of later.”",
     color: "bg-lilac",
@@ -31,13 +32,14 @@ export default function Home() {
         <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.1fr_1fr]">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border-2 border-line bg-mint px-3 py-1 text-xs font-bold">
-              ✨ Now with 40% more snoozing
+              <Image src="/icons/sparkles.svg" alt="" width={12} height={12} />
+              Now with 40% more snoozing
             </span>
             <h1 className="mt-6 font-display text-5xl leading-[1.02] font-extrabold tracking-tight md:text-7xl">
               The to-do app that{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">gets you.</span>
                 <span className="absolute inset-x-0 bottom-1 -z-0 h-4 -rotate-1 bg-accent/80" />
+                <span className="relative z-10">gets you.</span>
               </span>
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted">
@@ -77,9 +79,9 @@ export default function Home() {
                   className="rounded-2xl border-2 border-line bg-background p-6 shadow-brutal"
                 >
                   <span
-                    className={`grid size-12 place-items-center rounded-xl border-2 border-line text-2xl ${f.color}`}
+                    className={`grid size-12 place-items-center rounded-xl border-2 border-line ${f.color}`}
                   >
-                    {f.emoji}
+                    <Image src={f.icon} alt="" width={24} height={24} />
                   </span>
                   <h3 className="mt-5 font-display text-xl font-bold">{f.title}</h3>
                   <p className="mt-2 text-muted">{f.body}</p>
