@@ -14,12 +14,6 @@ const KEY = "later.todos.v1";
 const SEED: Todo[] = [
   { id: "seed-1", text: "Reply to that email from March", done: false, snoozes: 0 },
   { id: "seed-2", text: "Go to the gym (for real this time)", done: false, snoozes: 0 },
-  {
-    id: "seed-5",
-    text: "Fold the laundry (it’s been on the chair a week)",
-    done: false,
-    snoozes: 0,
-  },
   { id: "seed-3", text: "Water the plant", done: true, snoozes: 0 },
   {
     id: "seed-4",
