@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff8ec;
+  --foreground: #1c1917;
+  --surface: #ffffff;
+  --muted: #78716c;
+  --line: #1c1917;
+  --accent: #ff5a36;
+  --accent-ink: #ffffff;
+  --lemon: #ffd84d;
+  --mint: #9ee6c4;
+  --lilac: #c9b8ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-lemon: var(--lemon);
+  --color-mint: var(--mint);
+  --color-lilac: var(--lilac);
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-display);
+  --shadow-brutal: 4px 4px 0 0 var(--line);
+  --shadow-brutal-sm: 2px 2px 0 0 var(--line);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+}
+
+.animate-wobble {
+  animation: wobble 0.4s ease-in-out;
+}
